@@ -1,0 +1,17 @@
+{
+  "name": "shesmashes",
+  "version": "1.0.0",
+  "description": "e2e tests for sheSmashes",
+  "scripts": {
+    "test": "wdio wdio.conf.js",
+    "report": "allure generate --clean --output ./report"
+  },
+  "author": "Mamta Modi",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-commandline": "^2.5.0",
+    "wdio-allure-reporter": "^0.2.0",
+    "wdio-mocha-framework": "^0.5.12",
+    "webdriverio": "^4.10.1"
+  }
+}
