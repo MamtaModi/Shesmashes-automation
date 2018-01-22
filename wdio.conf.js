@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './src/**/*.spec.js'
+        './src/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -32,7 +32,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 5,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -42,7 +42,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 6,
         //
         browserName: 'Chrome'
     }],
@@ -58,7 +58,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'verbose',
+    logLevel: 'silent',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -80,7 +80,7 @@ exports.config = {
     baseUrl: 'http://develop-shesmashes-thehub.herokuapp.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 999999,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -129,8 +129,10 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd'
+       
+        
     },
-    reporters: ['dot', 'allure'],
+    reporters: ['spec', 'allure'],
     reporterOptions: {
         allure: {
             outputDir: 'allure-results'
